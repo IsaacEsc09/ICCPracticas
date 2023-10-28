@@ -1,4 +1,3 @@
-
 package icc;
 
 import icc.colors.Colors;

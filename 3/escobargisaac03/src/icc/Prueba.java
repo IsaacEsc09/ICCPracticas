@@ -11,7 +11,7 @@ public class Prueba {
         PAPEL,
         TIJERA
     }
-
+    
     public static void main(String args[]) {
         Scanner entrada = new Scanner (System.in);
         Random random = new Random();

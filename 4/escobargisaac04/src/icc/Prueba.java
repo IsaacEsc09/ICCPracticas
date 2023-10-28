@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import icc.colors.Colors;
 import icc.figuras.Circulo;
-import icc.figuras.Elipse;
+//import icc.figuras.Elipse;
 
 public class Prueba {
 
@@ -54,6 +54,9 @@ public class Prueba {
         int opcion;
         String mensaje, error;
         StringBuilder sb;
+
+    Sys
+
     }
 
 }
