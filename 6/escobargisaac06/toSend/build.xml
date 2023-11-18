@@ -98,6 +98,12 @@
 
     <target name="docs" description="generates javadoc">
         <!-- Generates all documentation -->
+        <javadoc destdir="${docs}/${tests}" sourcepath="${src}" author="true" version="true"
+            windowtitle="${ant.project.name}" classpathref="project.class.path">
+            <fileset dir="${tests}" defaultexcludes="yes">
+                <include name="**/*.java" />
+            </fileset>
+        </javadoc>
         <javadoc destdir="${docs}/${src}" author="true" version="true" windowtitle="${ant.project.name}">
             <fileset dir="${src}" defaultexcludes="yes">
                 <include name="**/*.java" />
