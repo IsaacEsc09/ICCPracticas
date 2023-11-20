@@ -20,12 +20,9 @@ public abstract class Acta{
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder();
-        sb.append("Nombre: ");
-        sb.append(this.nombre);
-        sb.append("\n");
-        sb.append("Fecha: ");
-        sb.append(this.fecha);
+        StringBuilder sb = new StringBuilder();
+        sb.append("Nombre: "+this.nombre+"\n");
+        sb.append("Fecha: "+this.fecha);
         return sb.toString();
     }
 }

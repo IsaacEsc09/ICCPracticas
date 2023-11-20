@@ -15,11 +15,9 @@ public class ActaNacimiento extends Acta{
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder();
-        sb.append(super.toString());
-        sb.append("\n");
-        sb.append("Ciudad: ");
-        sb.append(this.ciudad);
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString()+"\n");
+        sb.append("Ciudad: "+this.ciudad);
         return sb.toString();
     }
 	
