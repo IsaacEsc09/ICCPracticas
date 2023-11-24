@@ -1,8 +1,8 @@
-
 package icc;
 
 import java.util.Scanner;
 import icc.colors.Colors;
+import java.text.DecimalFormat;
 
 public class Prueba {
 
@@ -47,19 +47,19 @@ public class Prueba {
         }
     }
 
-    public static double celsiusF(double celsius) {
+    public static double celsiusToFahrenheit(double celsius) {
         return (celsius * 9 / 5) + 32;
     }
 
-    public static double fahrenheitC(double fahrenheit) {
+    public static double fahrenheitToCelsius(double fahrenheit) {
         return (fahrenheit - 32) * 5 / 9;
     }
 
     public static void main(String args[]) {
         int aux;
+        DecimalFormat decimal = new DecimalFormat("#.00");
 
-        do{
-
+        do {
             aux = getInt("Este programa realiza la conversión entre grados Celsius y grados Fahrenheit.\n1. Celsius a Fahrenheit.\n2. Fahrenheit a Celsius.\n0. Salir.\nEscoge una opción.",
                     "Ingresa una opción válida (0, 1, 2).", 0, 2);
 
@@ -67,7 +67,7 @@ public class Prueba {
                 case 1:
                     try {
                         double c = getDouble("Ingresa los grados en Celsius:", "Ingresa un valor válido.", -273.15, Double.MAX_VALUE);
-                        double f = celsiusF(c);
+                        double f = celsiusToFahrenheit(c);
                         System.out.println(c + " grados Celsius son equivalentes a " + f + " grados Fahrenheit.");
                     } catch (Exception e) {
                         System.out.println("Error durante la conversión: " + e.getMessage());
@@ -77,7 +77,7 @@ public class Prueba {
                 case 2:
                     try {
                         double f = getDouble("Ingresa los grados en Fahrenheit:", "Ingresa un valor válido.", -459.67, Double.MAX_VALUE);
-                        double c = fahrenheitC(f);
+                        double c = fahrenheitToCelsius(f);
                         System.out.println(f + " grados Fahrenheit son equivalentes a " + c + " grados Celsius.");
                     } catch (Exception e) {
                         System.out.println("Error durante la conversión: " + e.getMessage());
@@ -89,8 +89,8 @@ public class Prueba {
                     break;
             }
 
-        }while(aux != 0);
-
-
+        } while (aux != 0);
     }
+
+    
 }

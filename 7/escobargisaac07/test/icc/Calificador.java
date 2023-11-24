@@ -326,7 +326,7 @@ public abstract class Calificador {
      *
      * @param msg String Nombre de la categoría a buscar.
      *
-     * @return int Índice de la categoría a buscada.
+     * @return int indice de la categoría a buscada.
      *
      * @throws IndexOutOfBoundsException Si el nombre no se encuentra en el
      * arreglo de categorías.

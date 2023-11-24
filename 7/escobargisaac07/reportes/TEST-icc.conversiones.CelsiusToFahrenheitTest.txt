@@ -1,0 +1,15 @@
+Testsuite: icc.conversiones.CelsiusToFahrenheitTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 sec
+------------- Standard Output ---------------
+checkConversion:
+	Revisa que la conversion entre grados celsius y grados fahrenheit sea
+	correcta mutuamente.
+	[1.0/1.0]	Passed.
+===========================================================================
+  (Aciertos: 1.0/1.0)                                 Puntaje: 100.0/100.0 
+===========================================================================
+ Puntaje Total:                                                100.0/100.0 
+===========================================================================
+------------- ---------------- ---------------
+
+Testcase: checkConversion took 0.032 sec
