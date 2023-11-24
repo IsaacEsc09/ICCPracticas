@@ -11,7 +11,7 @@ public class Prueba {
         Scanner scn = new Scanner(System.in);
 
         while (true) {
-            System.out.println(mensaje);
+            Colors.println(mensaje,Colors.WHITE+Colors.HIGH_INTENSITY);
             if (scn.hasNextInt()) {
                 val = scn.nextInt();
                 // (-infinito, min) || (max, infinito)
@@ -22,7 +22,7 @@ public class Prueba {
                 }
             } else {
                 scn.next();
-                System.out.println(error);
+                Colors.println(error,Colors.RED+Colors.HIGH_INTENSITY);
             }
         }
     }
@@ -32,7 +32,7 @@ public class Prueba {
         Scanner scn = new Scanner(System.in);
 
         while (true) {
-            System.out.println(mensaje);
+            Colors.println(mensaje,Colors.WHITE+Colors.HIGH_INTENSITY);
             if (scn.hasNextDouble()) {
                 val = scn.nextDouble();
                 if (val < min || max < val) {
@@ -42,7 +42,7 @@ public class Prueba {
                 }
             } else {
                 scn.next();
-                System.out.println(error);
+                Colors.println(error,Colors.RED+Colors.HIGH_INTENSITY);
             }
         }
     }
@@ -57,7 +57,7 @@ public class Prueba {
 
     public static void main(String args[]) {
         int aux;
-        DecimalFormat decimal = new DecimalFormat("#.00");
+        DecimalFormat df = new DecimalFormat("#.00");
 
         do {
             aux = getInt("Este programa realiza la conversión entre grados Celsius y grados Fahrenheit.\n1. Celsius a Fahrenheit.\n2. Fahrenheit a Celsius.\n0. Salir.\nEscoge una opción.",
@@ -68,9 +68,10 @@ public class Prueba {
                     try {
                         double c = getDouble("Ingresa los grados en Celsius:", "Ingresa un valor válido.", -273.15, Double.MAX_VALUE);
                         double f = celsiusToFahrenheit(c);
-                        System.out.println(c + " grados Celsius son equivalentes a " + f + " grados Fahrenheit.");
-                    } catch (Exception e) {
-                        System.out.println("Error durante la conversión: " + e.getMessage());
+                        Colors.print(c,Colors.BLUE+Colors.HIGH_INTENSITY); Colors.print(" grados Celsius son equivalentes a ",Colors.WHITE+Colors.HIGH_INTENSITY); 
+                        Colors.print(df.format(f),Colors.RED+Colors.HIGH_INTENSITY); Colors.println(" grados Fahrenheit.",Colors.WHITE+Colors.HIGH_INTENSITY);
+                        } catch (Exception e) {
+                        Colors.println("Error durante la conversión: " + e.getMessage(),Colors.RED);
                     }
                     break;
 
@@ -78,14 +79,15 @@ public class Prueba {
                     try {
                         double f = getDouble("Ingresa los grados en Fahrenheit:", "Ingresa un valor válido.", -459.67, Double.MAX_VALUE);
                         double c = fahrenheitToCelsius(f);
-                        System.out.println(f + " grados Fahrenheit son equivalentes a " + c + " grados Celsius.");
+                        Colors.print(f,Colors.BLUE+Colors.HIGH_INTENSITY); Colors.print(" grados Celsius son equivalentes a ",Colors.WHITE+Colors.HIGH_INTENSITY); 
+                        Colors.print(df.format(c),Colors.RED+Colors.HIGH_INTENSITY); Colors.println(" grados Fahrenheit.",Colors.WHITE+Colors.HIGH_INTENSITY);
                     } catch (Exception e) {
                         System.out.println("Error durante la conversión: " + e.getMessage());
                     }
                     break;
 
                 case 0:
-                    System.out.println("Saliendo del programa. ¡Hasta luego!");
+                    Colors.println("Saliendo del programa. :)",Colors.BLUE+Colors.HIGH_INTENSITY);
                     break;
             }
 
