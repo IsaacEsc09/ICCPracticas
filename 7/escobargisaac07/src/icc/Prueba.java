@@ -9,44 +9,59 @@ import icc.conversiones.FahrenheitToCelsius;
 public class Prueba {
 
     public static int getInt(String mensaje, String error, int min, int max) {
-        int val;
+        int val = 0;
+        String s;
         Scanner scn = new Scanner(System.in);
 
-        while (true) {
-            Colors.println(mensaje,Colors.WHITE+Colors.HIGH_INTENSITY);
-            if (scn.hasNextInt()) {
-                val = scn.nextInt();
+        boolean continuar;
+
+        do {
+            try {
+                Colors.println(mensaje, Colors.HIGH_INTENSITY);
+                s = scn.next();
+                val = Integer.parseInt(s);
                 // (-infinito, min) || (max, infinito)
                 if (val < min || max < val) {
-                    System.out.println(error);
+                    throw new NumberFormatException();
                 } else {
-                    return val;
+                    continuar = false;
                 }
-            } else {
-                scn.next();
-                Colors.println(error,Colors.RED+Colors.HIGH_INTENSITY);
+            } catch (NumberFormatException e) {
+                continuar = true;
+                scn.reset();
+                Colors.println(error, Colors.RED + Colors.HIGH_INTENSITY);
             }
-        }
+        } while (continuar);
+
+        return val;
     }
 
     public static double getDouble(String mensaje, String error, double min, double max) {
-        double val;
+        double val = 0;
+        String s;
         Scanner scn = new Scanner(System.in);
 
-        while (true) {
-            Colors.println(mensaje,Colors.WHITE+Colors.HIGH_INTENSITY);
-            if (scn.hasNextDouble()) {
-                val = scn.nextDouble();
+        boolean continuar;
+
+        do {
+            try {
+                Colors.println(mensaje, Colors.HIGH_INTENSITY);
+                s = scn.next();
+                val = Double.parseDouble(s);
+                // (-infinito, min) || (max, infinito)
                 if (val < min || max < val) {
-                    System.out.println(error);
+                    throw new NumberFormatException();
                 } else {
-                    return val;
+                    continuar = false;
                 }
-            } else {
-                scn.next();
-                Colors.println(error,Colors.RED+Colors.HIGH_INTENSITY);
+            } catch (NumberFormatException e) {
+                continuar = true;
+                scn.reset();
+                Colors.println(error, Colors.RED + Colors.HIGH_INTENSITY);
             }
-        }
+        } while (continuar);
+
+        return val;
     }
 
     public static void main(String args[]) {
